@@ -103,6 +103,20 @@ To update bot follow this step :
 3. Start the bot
 4. If any eror happen check `log/app.log`
 
+## IMPORTANT NOTE (READ IT THIS IS NOT DECORATION)
+DWYOR & Always use a new wallet when running the bot, I am not responsible for any loss of assets.
+
+How to get BRIDGE RAW DATA ? 
+
+- Do manual Native Token Bridge (ETH or BNB) from ETH to MANGO WITH SMALL AMOUNT , EX : 0.00001 Token
+- Approve Token Spend
+- Approve Bridge Tx
+- Go to explorer and search for your tx hash showed on your wallet history
+
+ETH SEPOLIA EXPLORER : https://sepolia.etherscan.io/
+BSC TESTNET EXPLORER : https://testnet.bscscan.com/
+and copy the Input Data as HEX. Or you can just copy paste from wallet confirmation approval on input / data section.
+
 
 ## IMPORTANT NOTE (READ IT THIS IS NOT DECORATION)
 DWYOR & Always use a new wallet when running the bot, I am not responsible for any loss of assets.
