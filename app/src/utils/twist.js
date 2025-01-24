@@ -1,40 +1,47 @@
-import '../service/core-service.js';
-import { Twisters } from 'twisters';
-import _0x230e63 from './logger.js';
-import { accountList } from '../../accounts/accounts.js';
-class Twist {
-  ["twisters"];
-  constructor() {
-    this.twisters = new Twisters();
-  }
-  ['log'](_0xe6713f = '', _0x568ff1 = '', _0x3b4267, _0x1ad177) {
-    const _0x3bee01 = accountList.indexOf(_0x568ff1);
-    if (_0x1ad177 == undefined) {
-      _0x230e63.info("Account " + (_0x3bee01 + 0x1) + " - " + _0xe6713f);
-      _0x1ad177 = '-';
+  import '../service/core-service.js';
+  import { Twisters } from 'twisters';
+  import a13_0x4141e1 from './logger.js';
+  import { accountList } from '../../accounts/accounts.js';
+  class Twist {
+    ["twisters"];
+    constructor() {
+      this.twisters = new Twisters();
     }
-    const _0x297a03 = _0x3b4267.address ?? '-';
-    const _0x34830a = _0x3b4267.balance ?? [];
-    const _0x34c6a3 = _0x3b4267.user ?? {};
-    const _0xf3feed = _0x34c6a3.MgoUser ?? {};
-    const _0x1e4eda = _0xf3feed.integral ?? '-';
-    this.twisters.put(_0x568ff1, {
-      'text': "\n================== Account " + (_0x3bee01 + 0x1) + " =================\nAddress      : " + _0x297a03 + "\nBalance      : " + _0x34830a.map(_0x26a238 => {
-        return "\n- " + _0x26a238.totalBalance + " " + _0x26a238.coinType.split('::').pop();
-      }) + "\nScore        : " + _0x1e4eda + "\n               \nStatus : " + _0xe6713f + "\nDelay  : " + _0x1ad177 + "\n=============================================="
-    });
+    ['log'](_0x58ce91 = '', _0x20e604 = '', _0x15211, _0x154450) {
+      const _0x4e5c9b = accountList.indexOf(_0x20e604);
+      if (_0x154450 == undefined) {
+        a13_0x4141e1.info("Account " + (_0x4e5c9b + 0x1) + " - " + _0x58ce91);
+        _0x154450 = '-';
+      }
+      const _0x1bd4ea = _0x15211.address ?? '-';
+      const _0x5da681 = _0x15211.balance ?? [];
+      const _0x4f35cf = _0x15211.evmBalance ?? [];
+      const _0x537e95 = _0x15211.bscBalance ?? [];
+      const _0x272a48 = _0x15211.user ?? {};
+      const _0x52d5eb = _0x272a48.MgoUser ?? {};
+      const _0x2ad666 = _0x52d5eb.integral ?? '-';
+      const _0xc19b2f = _0x15211.evmWallet ?? undefined;
+      this.twisters.put(_0x20e604, {
+        'text': "\n================== Account " + (_0x4e5c9b + 0x1) + " =================\nAddress      : - " + _0x1bd4ea + " (MANGO) " + (_0xc19b2f ? "\n               - " + _0x15211.evmAddress + " (EVM)" : '') + "\n\nBalance      : \nMANGO NETWORK : " + _0x5da681.map(_0x27d2bd => {
+          return "\n- " + _0x27d2bd.totalBalance + " " + _0x27d2bd.coinType.split('::').pop();
+        }) + "\nETH SEPOLIA NETWORK : " + _0x4f35cf.map(_0x161fdd => {
+          return "\n- " + _0x161fdd.BALANCE + " " + _0x161fdd.SYMBOL;
+        }) + "\nTBNB NETWORK : " + _0x537e95.map(_0xf3bceb => {
+          return "\n- " + _0xf3bceb.BALANCE + " " + _0xf3bceb.SYMBOL;
+        }) + "\n\nScore        : " + _0x2ad666 + "\n               \nStatus : " + _0x58ce91 + "\nDelay : " + _0x154450 + "\n=============================================="
+      });
+    }
+    ["info"](_0x219a82 = '') {
+      this.twisters.put('2', {
+        'text': "\n==============================================\nInfo : " + _0x219a82 + "\n=============================================="
+      });
+      return;
+    }
+    ["clearInfo"]() {
+      this.twisters.remove('2');
+    }
+    ["clear"](_0x16ca74) {
+      this.twisters.remove(_0x16ca74);
+    }
   }
-  ["info"](_0x21757e = '') {
-    this.twisters.put('2', {
-      'text': "\n==============================================\nInfo : " + _0x21757e + "\n=============================================="
-    });
-    return;
-  }
-  ["clearInfo"]() {
-    this.twisters.remove('2');
-  }
-  ["clear"](_0x3b5c47) {
-    this.twisters.remove(_0x3b5c47);
-  }
-}
-export default new Twist();
+  export default new Twist();
